@@ -9,6 +9,15 @@ public class Constants {
     public static final String TABLE_NAME_RANKED_LINEAGE = "RANKED_LINEAGE";
     public static final String TABLE_NAME_DELETED_NODES = "DELETED_NODES";
     public static final String TABLE_NAME_MERGED = "MERGED";
+    public static final String TABLE_NAME_CITATIONS = "CITATIONS";
+    public static final String TABLE_NAME_DIVISION = "DIVISION";
+    public static final String TABLE_NAME_EXCLUDE_FROM_TYPE= "EXCLUDE_FROM_TYPE";
+    public static final String TABLE_NAME_GENCODE= "GENCODE";
+    public static final String TABLE_NAME_HOSTS= "HOSTS";
+    public static final String TABLE_NAME_IMAGE= "IMAGE";
+    public static final String TABLE_NAME_TYPE_OF_MATERIAL = "TYPE_OF_MATERIAL";
+    public static final String TABLE_NAME_TYPE_OF_TYPE = "TYPE_OF_TYPE";
+
 
     public static final String FRIENDLY_NAME_NODES = "nodes";
     public static final String FRIENDLY_NAME_NAMES = "names";
@@ -17,6 +26,14 @@ public class Constants {
     public static final String FRIENDLY_NAME_RANKED_LINEAGE = "ranked lineage";
     public static final String FRIENDLY_NAME_DELETED_NODES = "deleted nodes";
     public static final String FRIENDLY_NAME_MERGED_NODES = "merged nodes";
+    public static final String FRIENDLY_NAME_CITATIONS = "citations";
+    public static final String FRIENDLY_NAME_DIVISION = "divisions";
+    public static final String FRIENDLY_NAME_EXCLUDE_FROM_TYPE = "exclude from type";
+    public static final String FRIENDLY_NAME_GENCODE = "gencode";
+    public static final String FRIENDLY_NAME_HOSTS = "hosts";
+    public static final String FRIENDLY_NAME_IMAGE = "image";
+    public static final String FRIENDLY_NAME_TYPE_OF_MATERIAL = "type of material";
+    public static final String FRIENDLY_NAME_TYPE_OF_TYPE = "type of type";
 
     public static final String[] NODES_COLUMN_HEADERS = new String[] {
         "tax_id",
@@ -77,5 +94,67 @@ public class Constants {
     public static final String[] MERGED_COLUMN_HEADERS = new String[] {
             "old_tax_id",
             "new_tax_id"
+    };
+
+    public static final String[] CITATIONS_COLUMN_HEADERS = new String[] {
+            "cit_id",
+            "cit_key",
+            "medline_id",
+            "pubmed_id",
+            "url",
+            "text",
+            "tax_id_list"
+    };
+
+    public static final String[] DIVISION_COLUMN_HEADERS = new String[] {
+            "division_id",
+            "division_cde",
+            "division_name",
+            "comments"
+    };
+
+    public static final String[] EXCLUDE_FROM_TYPE_COLUMN_HEADERS = new String[] {
+        "tax_id",
+        "name_txt",
+        "property",
+        "voucher_strain"
+    };
+
+    public static final String[] GENCODE_COLUMN_HEADERS = new String[] {
+            "genetic_code_id",
+            "abbreviation",
+            "genetic_code_name",
+            "cde",
+            "starts"
+    };
+
+    public static final String[] HOSTS_COLUMN_HEADERS = new String[] {
+            "tax_id",
+            "potential_hosts"
+    };
+
+    public static final String[] IMAGE_COLUMN_HEADERS = new String[] {
+            "image_id",
+            "image_key",
+            "image_url",
+            "license",
+            "attribution",
+            "source",
+            "properties",
+            "tax_id_list"
+    };
+
+    public static final String[] TYPE_OF_MATERIAL_COLUMN_HEADERS = new String[] {
+            "tax_id",
+            "type_name",
+            "type",
+            "identifier"
+    };
+
+    public static final String[] TYPE_OF_TYPE_COLUMN_HEADERS = new String[] {
+            "type_name",
+            "synonyms",
+            "nomenclature",
+            "description"
     };
 }

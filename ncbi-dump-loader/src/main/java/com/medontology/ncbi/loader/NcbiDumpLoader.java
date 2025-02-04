@@ -39,6 +39,30 @@ public class NcbiDumpLoader implements CommandLineRunner {
     @Value("${ncbi.file.path.merged}")
     private String mergedPath;
 
+    @Value("${ncbi.file.path.citations}")
+    private String citationsPath;
+
+    @Value("${ncbi.file.path.division}")
+    private String divisionPath;
+
+    @Value("${ncbi.file.path.exclude.from.type}")
+    private String excludeFromTypePath;
+
+    @Value("${ncbi.file.path.gencode}")
+    private String gencodePath;
+
+    @Value("${ncbi.file.path.host}")
+    private String hostPath;
+
+    @Value("${ncbi.file.path.image}")
+    private String imagePath;
+
+    @Value("${ncbi.file.path.type.of.material}")
+    private String typeOfMaterialPath;
+
+    @Value("${ncbi.file.path.type.of.type}")
+    private String typeOfTypePath;
+
     @Value("${ncbi.file.process.nodes}")
     private boolean processNodes;
 
@@ -60,6 +84,30 @@ public class NcbiDumpLoader implements CommandLineRunner {
     @Value("${ncbi.file.process.merged}")
     private boolean processMerged;
 
+    @Value("${ncbi.file.process.citations}")
+    private boolean processCitations;
+
+    @Value("${ncbi.file.process.division}")
+    private boolean processDivision;
+
+    @Value("${ncbi.file.process.exclude.from.type}")
+    private boolean processExcludeFromType;
+
+    @Value("${ncbi.file.process.gencode}")
+    private boolean processGencode;
+
+    @Value("${ncbi.file.process.host}")
+    private boolean processHost;
+
+    @Value("${ncbi.file.process.image}")
+    private boolean processImage;
+
+    @Value("${ncbi.file.process.type.of.material}")
+    private boolean processTypeOfMaterial;
+
+    @Value("${ncbi.file.process.type.of.type}")
+    private boolean processTypeOfType;
+
     public static void main(String[] args) {
         SpringApplication.run(NcbiDumpLoader.class, args);
     }
@@ -74,6 +122,14 @@ public class NcbiDumpLoader implements CommandLineRunner {
         processFile(processRankedLineage, Constants.FRIENDLY_NAME_RANKED_LINEAGE, rankedLineagePath, Constants.TABLE_NAME_RANKED_LINEAGE, Constants.RANKED_LINEAGE_COLUMN_HEADERS);
         processFile(processDeletedNodes, Constants.FRIENDLY_NAME_DELETED_NODES, deletedNodesPath, Constants.TABLE_NAME_DELETED_NODES, Constants.DELETED_NODES_COLUMN_HEADERS);
         processFile(processMerged, Constants.FRIENDLY_NAME_MERGED_NODES, mergedPath, Constants.TABLE_NAME_MERGED, Constants.MERGED_COLUMN_HEADERS);
+        processFile(processCitations, Constants.FRIENDLY_NAME_CITATIONS, citationsPath, Constants.TABLE_NAME_CITATIONS, Constants.CITATIONS_COLUMN_HEADERS);
+        processFile(processDivision, Constants.FRIENDLY_NAME_DIVISION, divisionPath, Constants.TABLE_NAME_DIVISION, Constants.DIVISION_COLUMN_HEADERS);
+        processFile(processExcludeFromType, Constants.FRIENDLY_NAME_EXCLUDE_FROM_TYPE, excludeFromTypePath, Constants.TABLE_NAME_EXCLUDE_FROM_TYPE, Constants.EXCLUDE_FROM_TYPE_COLUMN_HEADERS);
+        processFile(processGencode, Constants.FRIENDLY_NAME_GENCODE, gencodePath, Constants.TABLE_NAME_GENCODE, Constants.GENCODE_COLUMN_HEADERS);
+        processFile(processHost, Constants.FRIENDLY_NAME_HOSTS, hostPath, Constants.TABLE_NAME_HOSTS, Constants.HOSTS_COLUMN_HEADERS);
+        processFile(processImage, Constants.FRIENDLY_NAME_IMAGE, imagePath, Constants.TABLE_NAME_IMAGE, Constants.IMAGE_COLUMN_HEADERS);
+        processFile(processTypeOfMaterial, Constants.FRIENDLY_NAME_TYPE_OF_MATERIAL, typeOfMaterialPath, Constants.TABLE_NAME_TYPE_OF_MATERIAL, Constants.TYPE_OF_MATERIAL_COLUMN_HEADERS);
+        processFile(processTypeOfType, Constants.FRIENDLY_NAME_TYPE_OF_TYPE, typeOfTypePath, Constants.TABLE_NAME_TYPE_OF_TYPE, Constants.TYPE_OF_TYPE_COLUMN_HEADERS);
     }
 
     public void processFile(boolean processFile, String filename, String filePath, String tableName, String[] columnHeaders) {

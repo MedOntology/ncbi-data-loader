@@ -35,19 +35,23 @@ public class NcbiDumpWriter {
 
             int i = 0;
             for(Object[] value: values) {
-                try {
-                    i++;
-                    jdbcTemplate.update(sql, value);
-                    if ( i % 100000 == 0) {
-                        System.out.println(i);
+                if(value.length != columnNames.length) {
+                    System.out.println("Skipping line " + i + " due to invalid number of columns. Expected: " + columnNames.length + ", Actual: " + value.length + " - probably due to unescaped pipe character");
+                } else {
+                    try {
+                        i++;
+                        jdbcTemplate.update(sql, value);
+                        if (i % 100000 == 0) {
+                            System.out.println(i);
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Line number: " + i);
+                        e.printStackTrace();
                     }
-                } catch (Exception e) {
-                    System.out.println("Line number: " + i);
-                    e.printStackTrace();
                 }
             }
 
-            jdbcTemplate.batchUpdate(sql, values);
+            //jdbcTemplate.batchUpdate(sql, values);
 
             System.out.println("Data has been successfully imported into table: " + tableName);
     }
