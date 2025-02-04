@@ -1,0 +1,42 @@
+# Datasource configuration properties
+spring.jpa.hibernate.ddl-auto=none
+spring.datasource.url=jdbc:mysql://localhost:3306/ncbi
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver
+spring.datasource.username=[enter username here]
+spring.datasource.password=[enter password here]
+spring.datasource.hikari.connectionTimeout=200000
+spring.datasource.hikari.maximumPoolSize=50
+
+# Location of NCBI dump files
+ncbi.file.path.nodes=[enter root filepath here]/new_taxdump/nodes.dmp
+ncbi.file.path.names=[enter root filepath here]/new_taxdump/names.dmp
+ncbi.file.path.full.name.lineage=[enter root filepath here]/new_taxdump/fullnamelineage.dmp
+ncbi.file.path.tax.id.lineage=[enter root filepath here]/new_taxdump/taxidlineage.dmp
+ncbi.file.path.ranked.lineage=[enter root filepath here]/new_taxdump/rankedlineage.dmp
+ncbi.file.path.deleted.nodes=[enter root filepath here]/new_taxdump/delnodes.dmp
+ncbi.file.path.merged=[enter root filepath here]/new_taxdump/merged.dmp
+ncbi.file.path.citations=[enter root filepath here]/new_taxdump/citations.dmp
+ncbi.file.path.division=[enter root filepath here]/new_taxdump/division.dmp
+ncbi.file.path.exclude.from.type=[enter root filepath here]/new_taxdump/excludedfromtype.dmp
+ncbi.file.path.gencode=[enter root filepath here]/new_taxdump/gencode.dmp
+ncbi.file.path.host=[enter root filepath here]/new_taxdump/host.dmp
+ncbi.file.path.image=[enter root filepath here]/new_taxdump/images.dmp
+ncbi.file.path.type.of.material=[enter root filepath here]/new_taxdump/typematerial.dmp
+ncbi.file.path.type.of.type=[enter root filepath here]/new_taxdump/typeoftype.dmp
+
+# Set to true if you wish to import file
+ncbi.file.process.nodes=true
+ncbi.file.process.names=true
+ncbi.file.process.full.name.lineage=true
+ncbi.file.process.tax.id.lineage=true
+ncbi.file.process.ranked.lineage=true
+ncbi.file.process.deleted.nodes=true
+ncbi.file.process.merged=true
+ncbi.file.process.citations=true
+ncbi.file.process.division=true
+ncbi.file.process.exclude.from.type=true
+ncbi.file.process.gencode=true
+ncbi.file.process.host=true
+ncbi.file.process.image=true
+ncbi.file.process.type.of.material=true
+ncbi.file.process.type.of.type=true
